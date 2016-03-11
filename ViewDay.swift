@@ -32,21 +32,25 @@ class ViewDay: UIViewController {
     
    
     @IBAction func dateSelected(sender: AnyObject) {
+        
+        nsdata.synchronize();
+        block.text = "";
     
-        block.text = "testing"
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        edate = dateFormatter.stringFromDate(datePicker.date)
+        var dateFormatter = NSDateFormatter();
+        dateFormatter.dateFormat = "dd-MM-yyyy";
+        edate = dateFormatter.stringFromDate(datePicker.date);
         print(edate);
         
         if count > 0 {
+            print("count > 0");
             for var i = 0; i < count; ++i {
-                let date = events[i]
-                var index = date.endIndex.advancedBy(-6)
-                var substring = date.substringToIndex(index)
-                var split = substring.componentsSeparatedByString(": ")
-                print(split[1])
-                if (date == split[1]){
+                let date = events[i];
+                var index = date.endIndex.advancedBy(-6);
+                var substring = date.substringToIndex(index);
+                var split = substring.componentsSeparatedByString(": ");
+                print(split[1]);
+                print(date);
+                if (edate == split[1]){
                     block.text = block.text + events[i] + "\n";
                     print(block.text);
                     
