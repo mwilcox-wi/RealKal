@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import EventKit
 
 class CreateEvent: UIViewController {
     
@@ -16,9 +18,14 @@ class CreateEvent: UIViewController {
     @IBOutlet weak var timePicker: UIDatePicker!
     
     var thisEvent = Event();
+    var date = "";
+    var time = "";
+    var eventList: [String] = [];
     
-    var dateFormatter = NSDateFormatter();
-    var timeFormatter = NSDateFormatter();
+    
+    
+    
+   
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -42,6 +49,15 @@ class CreateEvent: UIViewController {
         thisEvent.title = eventTitle.text;
         thisEvent.date = datePicker.date;
         thisEvent.time = timePicker.date;
+        
+        eventList = [eventTitle.text!, strDate]
+        print(eventList)
+        data.setValue(eventList, forKey: "event " + String(count))
+        events.append(eventTitle.text! + ": " + strDate)
+        ++count
+        tmp = count
+        data.setValue(count, forKey: "count")
+        data.synchronize()
         
     }
     

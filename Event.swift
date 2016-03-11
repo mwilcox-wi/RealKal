@@ -1,5 +1,5 @@
 //
-//  EventInterface.swift
+//  Event.swift
 //  RealKal
 //
 //  Created by Matthew Wilcox on 3/10/16.
@@ -8,11 +8,18 @@
 
 import Foundation
 
-class Event{
+class Event : NSObject {
     
-    var title = String?();
-    var date = NSDate();
-    var time = NSDate();
+    var _title : String? = "";
+    var title:String{
+        get{
+            return title1;
+        }
+        
+    
+    
+    }
+    
     
     
   
