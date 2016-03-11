@@ -47,7 +47,6 @@ class ViewController: UIViewController {
         }
         print(events)
         ++loadedCount
-        //print(data.objectForKey("event 1"))
 
         // Do any additional setup after loading the view, typically from a nib.
     }

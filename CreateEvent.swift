@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-
 import EventKit
 
 class CreateEvent: UIViewController {

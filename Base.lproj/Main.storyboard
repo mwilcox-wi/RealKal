@@ -5,6 +5,52 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
+        <!--View Day-->
+        <scene sceneID="TLF-W4-kRD">
+            <objects>
+                <viewController id="37h-Vr-r2s" customClass="ViewDay" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uYh-yg-NnZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="u8o-hB-9DT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e8G-9o-YgB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-DP-xvG">
+                                <rect key="frame" x="0.0" y="133" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="479419455.65001303">
+                                    <!--2016-03-11 20:04:15 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85M-wS-Yml">
+                                <rect key="frame" x="138" y="404" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJS-2w-fu7">
+                                <rect key="frame" x="115" y="481" width="91" height="30"/>
+                                <state key="normal" title="Return Home"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="No events found" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-6W-5V8">
+                                <rect key="frame" x="40" y="27" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uJS-2w-fu7" firstAttribute="centerX" secondItem="85M-wS-Yml" secondAttribute="centerX" id="XiH-XE-tVh"/>
+                            <constraint firstItem="QyI-6W-5V8" firstAttribute="centerX" secondItem="e8G-9o-YgB" secondAttribute="centerX" id="bq1-qm-PdD"/>
+                            <constraint firstItem="H9z-DP-xvG" firstAttribute="centerX" secondItem="QyI-6W-5V8" secondAttribute="centerX" id="kCV-qb-e8M"/>
+                            <constraint firstItem="85M-wS-Yml" firstAttribute="centerX" secondItem="H9z-DP-xvG" secondAttribute="centerX" id="yJQ-uU-0wZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mt-lt-gVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="112"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,9 +63,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6W-QI-e1b">
-                                <rect key="frame" x="108" y="163" width="104" height="30"/>
-                                <state key="normal" title="View All Events"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-ms-pea">
+                                <rect key="frame" x="125" y="327" width="70" height="30"/>
+                                <state key="normal" title="View Date"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Planner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-WZ-3eN">
                                 <rect key="frame" x="105" y="102" width="109" height="21"/>
@@ -34,9 +80,12 @@
                                     <segue destination="WcS-YS-suR" kind="show" identifier="segue1" id="40a-ks-f7o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-ms-pea">
-                                <rect key="frame" x="125" y="327" width="70" height="30"/>
-                                <state key="normal" title="View Date"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6W-QI-e1b">
+                                <rect key="frame" x="108" y="163" width="104" height="30"/>
+                                <state key="normal" title="View All Events"/>
+                                <connections>
+                                    <segue destination="37h-Vr-r2s" kind="show" id="GZI-OP-wIc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
