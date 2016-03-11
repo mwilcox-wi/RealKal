@@ -52,6 +52,7 @@ class CreateEvent: UIViewController {
         tmp = count;
         nsdata.setValue(count, forKey: "count");
         nsdata.synchronize();
+        
     }
     
    

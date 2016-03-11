@@ -8,7 +8,7 @@
         <!--View Day-->
         <scene sceneID="TLF-W4-kRD">
             <objects>
-                <viewController id="37h-Vr-r2s" customClass="ViewDay" sceneMemberID="viewController">
+                <viewController id="37h-Vr-r2s" customClass="ViewDay" customModule="RealKal" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uYh-yg-NnZ"/>
                         <viewControllerLayoutGuide type="bottom" id="u8o-hB-9DT"/>
@@ -17,29 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="No events found" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-6W-5V8">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Choose a Date/Time" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-6W-5V8">
                                 <rect key="frame" x="40" y="27" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-DP-xvG">
-                                <rect key="frame" x="0.0" y="133" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="479419455.65001303">
-                                    <!--2016-03-11 20:04:15 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJS-2w-fu7">
-                                <rect key="frame" x="115" y="481" width="91" height="30"/>
-                                <state key="normal" title="Return Home"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="jO4-A2-6JA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85M-wS-Yml">
                                 <rect key="frame" x="138" y="404" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJS-2w-fu7">
+                                <rect key="frame" x="115" y="481" width="91" height="30"/>
+                                <state key="normal" title="Return Home"/>
+                            </button>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-DP-xvG">
+                                <rect key="frame" x="0.0" y="133" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="479419455.65001303">
+                                    <!--2016-03-11 20:04:15 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateSelected:" destination="37h-Vr-r2s" eventType="valueChanged" id="Brw-rG-BCO"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,13 +73,6 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6W-QI-e1b">
                                 <rect key="frame" x="108" y="163" width="104" height="30"/>
                                 <state key="normal" title="View All Events"/>
-                                <connections>
-                                    <segue destination="37h-Vr-r2s" kind="show" id="GZI-OP-wIc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-ms-pea">
-                                <rect key="frame" x="125" y="327" width="70" height="30"/>
-                                <state key="normal" title="View Date"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event Planner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h0-WZ-3eN">
                                 <rect key="frame" x="105" y="102" width="109" height="21"/>
@@ -92,6 +85,13 @@
                                 <state key="normal" title="Create An Event"/>
                                 <connections>
                                     <segue destination="WcS-YS-suR" kind="show" id="kTX-wm-WJ2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-ms-pea">
+                                <rect key="frame" x="125" y="327" width="70" height="30"/>
+                                <state key="normal" title="View Date"/>
+                                <connections>
+                                    <segue destination="37h-Vr-r2s" kind="show" id="b6S-E4-Bk4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -114,7 +114,7 @@
         <!--Create Event-->
         <scene sceneID="j2C-eZ-4Dj">
             <objects>
-                <viewController id="WcS-YS-suR" customClass="CreateEvent" customModule="Event" sceneMemberID="viewController">
+                <viewController id="WcS-YS-suR" customClass="CreateEvent" customModule="RealKal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lPx-6f-hrd"/>
                         <viewControllerLayoutGuide type="bottom" id="T7O-8U-0hj"/>
@@ -132,17 +132,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMb-8m-DfV">
-                                <rect key="frame" x="184" y="323" width="46" height="30"/>
+                                <rect key="frame" x="184" y="348" width="46" height="30"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="createEvent:" destination="WcS-YS-suR" eventType="touchUpInside" id="nrZ-ak-ydU"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="JlP-hf-YDP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63N-4X-bOX">
                                 <rect key="frame" x="162" y="404" width="91" height="30"/>
                                 <state key="normal" title="Return Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="g80-JP-w3t"/>
+                                </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="y71-78-wiP">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="y71-78-wiP">
                                 <rect key="frame" x="0.0" y="110" width="414" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="479422362.80091798">
                                     <!--2016-03-11 20:52:42 +0000-->
@@ -172,4 +176,7 @@
             <point key="canvasLocation" x="831" y="212"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="g80-JP-w3t"/>
+    </inferredMetricsTieBreakers>
 </document>
