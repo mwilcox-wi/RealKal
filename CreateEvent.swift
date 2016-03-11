@@ -10,25 +10,18 @@ import UIKit
 import Foundation
 import EventKit
 
+
 class CreateEvent: UIViewController {
     
-    
-    @IBOutlet weak var eventTitle: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var timePicker: UIDatePicker!
-    
-    var thisEvent = Event();
+    @IBOutlet weak var eTitle: UITextField!
+    @IBOutlet weak var datePick: UIDatePicker!
     var date = "";
-    var time = "";
     var eventList: [String] = [];
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //datePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        //timePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
         
     }
@@ -39,29 +32,29 @@ class CreateEvent: UIViewController {
     }
     
     
-    @IBAction func pickedDate(sender: AnyObject) {
+    @IBAction func dateChanged(sender: UIDatePicker) {
         
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        date = dateFormatter.stringFromDate(datePicker.date)
-        
-        
-        
+        date = dateFormatter.stringFromDate(datePick.date)
     }
+
+
     
-    @IBAction func doneButtonClicked(sender: AnyObject) {
-  
+    
+    @IBAction func createEvent(sender: AnyObject) {
         
-        eventList = [eventTitle.text!, date];
+        eventList = [eTitle.text!, date];
         print(eventList);
         nsdata.setValue(eventList, forKey: "event " + String(count));
-        events.append(eventTitle.text! + ": " + date);
+        events.append(eTitle.text! + ": " + date);
         ++count;
         tmp = count;
         nsdata.setValue(count, forKey: "count");
         nsdata.synchronize();
-        
     }
+    
+   
     
     
     

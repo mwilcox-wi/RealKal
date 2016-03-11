@@ -8,13 +8,13 @@
 
 import UIKit
 
+var nsdata = NSUserDefaults.standardUserDefaults()
+var count = 0;
+var events: [String] = [];
+var loadedCount = 0;
+var tmp = 0;
+
 class ViewController: UIViewController {
-    
-    var nsdata = NSUserDefaults.standardUserDefaults()
-    var count = 0;
-    var events: [String] = [];
-    var loadedCount = 0;
-    var tmp = 0;
 
     override func viewDidLoad() {
         super.viewDidLoad()

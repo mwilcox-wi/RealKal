@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit;
 
-class ViewAll : UIViewController{
+class ViewAll : UIViewController {
 
 
 

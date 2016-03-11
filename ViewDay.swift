@@ -11,6 +11,8 @@ import UIKit
 class ViewDay: UIViewController {
     
    
+    @IBOutlet weak var block: UITextView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
