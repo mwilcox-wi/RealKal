@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+
 import EventKit
 
 class CreateEvent: UIViewController {
@@ -22,12 +23,6 @@ class CreateEvent: UIViewController {
     var time = "";
     var eventList: [String] = [];
     
-    
-    
-    
-   
-    
-    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,20 +39,28 @@ class CreateEvent: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func pickedDate(sender: AnyObject) {
+        
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        date = dateFormatter.stringFromDate(datePicker.date)
+        
+        
+        
+    }
+    
     @IBAction func doneButtonClicked(sender: AnyObject) {
+  
         
-        thisEvent.title = eventTitle.text;
-        thisEvent.date = datePicker.date;
-        thisEvent.time = timePicker.date;
-        
-        eventList = [eventTitle.text!, strDate]
-        print(eventList)
-        data.setValue(eventList, forKey: "event " + String(count))
-        events.append(eventTitle.text! + ": " + strDate)
-        ++count
-        tmp = count
-        data.setValue(count, forKey: "count")
-        data.synchronize()
+        eventList = [eventTitle.text!, date];
+        print(eventList);
+        nsdata.setValue(eventList, forKey: "event " + String(count));
+        events.append(eventTitle.text! + ": " + date);
+        ++count;
+        tmp = count;
+        nsdata.setValue(count, forKey: "count");
+        nsdata.synchronize();
         
     }
     
