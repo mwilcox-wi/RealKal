@@ -75,13 +75,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMb-8m-DfV">
-                                <rect key="frame" x="189" y="555" width="37" height="30"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="bKe-yv-ehd"/>
-                                </connections>
-                            </button>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8z1-Q0-THw">
                                 <rect key="frame" x="57" y="110" width="300" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="479355251.05449402">
@@ -103,6 +96,14 @@
                                     <!--1970-01-01 11:00:00 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMb-8m-DfV">
+                                <rect key="frame" x="189" y="555" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="WcS-YS-suR" eventType="touchUpInside" id="csE-Yz-OK6"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ImJ-Vd-VBs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration">
@@ -118,6 +119,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="doneButton" destination="yMb-8m-DfV" id="7IC-98-paP"/>
                         <outlet property="eventTitle" destination="Lef-rD-i6H" id="HGE-jB-Rih"/>
                         <outlet property="timePicker" destination="nn9-eH-BfH" id="k5l-p0-XPJ"/>
                     </connections>

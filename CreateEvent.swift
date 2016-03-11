@@ -10,21 +10,24 @@ import UIKit
 
 class CreateEvent: UIViewController {
     
+    
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timePicker: UIDatePicker!
     
-    var eventArray = [base]();
+    var thisEvent = Event();
     
     var dateFormatter = NSDateFormatter();
     var timeFormatter = NSDateFormatter();
+    
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        datePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        timePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        //datePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        //timePicker.addTarget(self, action: Selector("dataPickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
         
     }
@@ -33,6 +36,15 @@ class CreateEvent: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func doneButtonClicked(sender: AnyObject) {
+        
+        thisEvent.title = eventTitle.text;
+        thisEvent.date = datePicker.date;
+        thisEvent.time = timePicker.date;
+        
+    }
+    
     
     
 }

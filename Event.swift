@@ -8,11 +8,11 @@
 
 import Foundation
 
-class EventInterface{
+class Event{
     
     var title = String?();
-    let date = NSDateFormatter();
-    let time = NSDateFormatter();
+    var date = NSDate();
+    var time = NSDate();
     
     
   
