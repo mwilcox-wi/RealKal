@@ -17,22 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Choose a Date/Time" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-6W-5V8">
-                                <rect key="frame" x="40" y="27" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Choose a Date/Time" translatesAutoresizingMaskIntoConstraints="NO" id="QyI-6W-5V8">
+                                <rect key="frame" x="40" y="72" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85M-wS-Yml">
-                                <rect key="frame" x="138" y="404" width="45" height="30"/>
-                                <state key="normal" title="Delete"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJS-2w-fu7">
-                                <rect key="frame" x="115" y="481" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJS-2w-fu7">
+                                <rect key="frame" x="115" y="512" width="91" height="30"/>
                                 <state key="normal" title="Return Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="uSL-4Q-xu9"/>
+                                </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-DP-xvG">
-                                <rect key="frame" x="0.0" y="133" width="320" height="216"/>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9z-DP-xvG">
+                                <rect key="frame" x="0.0" y="208" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="479419455.65001303">
                                     <!--2016-03-11 20:04:15 +0000-->
                                 </date>
@@ -43,10 +42,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uJS-2w-fu7" firstAttribute="centerX" secondItem="85M-wS-Yml" secondAttribute="centerX" id="XiH-XE-tVh"/>
+                            <constraint firstItem="QyI-6W-5V8" firstAttribute="top" secondItem="uYh-yg-NnZ" secondAttribute="bottom" constant="8" id="A4v-ep-XRy"/>
                             <constraint firstItem="QyI-6W-5V8" firstAttribute="centerX" secondItem="e8G-9o-YgB" secondAttribute="centerX" id="bq1-qm-PdD"/>
                             <constraint firstItem="H9z-DP-xvG" firstAttribute="centerX" secondItem="QyI-6W-5V8" secondAttribute="centerX" id="kCV-qb-e8M"/>
-                            <constraint firstItem="85M-wS-Yml" firstAttribute="centerX" secondItem="H9z-DP-xvG" secondAttribute="centerX" id="yJQ-uU-0wZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -177,6 +175,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g80-JP-w3t"/>
+        <segue reference="uSL-4Q-xu9"/>
     </inferredMetricsTieBreakers>
 </document>

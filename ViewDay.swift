@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import EventKit
+import Foundation
 
 class ViewDay: UIViewController {
     
@@ -15,7 +17,7 @@ class ViewDay: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     var thru = 0
     var temp = 0
-    var date = ""
+    var edate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,11 @@ class ViewDay: UIViewController {
    
     @IBAction func dateSelected(sender: AnyObject) {
     
-        block.text = ""
+        block.text = "testing"
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        date = dateFormatter.stringFromDate(datePicker.date)
-        print(date);
+        edate = dateFormatter.stringFromDate(datePicker.date)
+        print(edate);
         
         if count > 0 {
             for var i = 0; i < count; ++i {
@@ -46,6 +48,8 @@ class ViewDay: UIViewController {
                 print(split[1])
                 if (date == split[1]){
                     block.text = block.text + events[i] + "\n";
+                    print(block.text);
+                    
                 }
                 
             }
