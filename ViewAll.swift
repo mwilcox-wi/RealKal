@@ -6,11 +6,10 @@
 //  Copyright © 2016 Matthew Wilcox. All rights reserved.
 //
 
-import Foundation
 import UIKit;
 import EventKit
 
-class ViewAll : UIViewController {
+class ViewAll: UIViewController {
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -22,10 +21,6 @@ class ViewAll : UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // UITableViewDataSource Functions
     
@@ -53,6 +48,7 @@ class ViewAll : UIViewController {
         --count
         nsdata.setValue(count, forKey: "count")
         nsdata.synchronize()
+        tableView.reloadData();
     
     
     }

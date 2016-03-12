@@ -92,8 +92,8 @@
                                 <rect key="frame" x="0.0" y="93" width="375" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="ohh-IB-uTZ" id="U4G-e5-0jC"/>
-                                    <outlet property="delegate" destination="ohh-IB-uTZ" id="J4J-wO-Uat"/>
+                                    <outlet property="dataSource" destination="ohh-IB-uTZ" id="boB-Es-ZUr"/>
+                                    <outlet property="delegate" destination="ohh-IB-uTZ" id="SJz-zl-cxu"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -101,8 +101,6 @@
                         <constraints>
                             <constraint firstItem="XUO-Oc-QDN" firstAttribute="centerX" secondItem="jCY-vK-jzA" secondAttribute="centerX" id="05x-ry-XUO"/>
                             <constraint firstItem="eQX-X2-ag1" firstAttribute="centerX" secondItem="4cS-KV-tbQ" secondAttribute="centerX" id="VhG-Nw-uYA"/>
-                            <constraint firstItem="jCY-vK-jzA" firstAttribute="top" secondItem="eQX-X2-ag1" secondAttribute="bottom" constant="273" id="Yuj-pm-Mv0"/>
-                            <constraint firstItem="jCY-vK-jzA" firstAttribute="centerY" secondItem="eQX-X2-ag1" secondAttribute="centerY" id="pn1-an-URG"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
