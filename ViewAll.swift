@@ -8,15 +8,17 @@
 
 import Foundation
 import UIKit;
+import EventKit
 
 class ViewAll : UIViewController {
 
 
-    @IBOutlet weak var listView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    var index = 9999;
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -25,42 +27,39 @@ class ViewAll : UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var index = 9999
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     // UITableViewDataSource Functions
     
-    func tableView(listView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count;
     }
     
-    func tableView(listView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell! {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"cell")
         cell.textLabel?.text = events[indexPath.row]
         print(indexPath.row)
         return cell
     }
     
-    func tableView(listView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let indexPath = listView.indexPathForSelectedRow
-        let currentCell = listView.cellForRowAtIndexPath(indexPath!)! as UITableViewCell
-        index = indexPath!.row
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!)! as UITableViewCell;
+        index = indexPath!.row;
     }
     
-    @IBAction func deleteClicked(sender: AnyObject) {
+    @IBAction func deleteEvent(sender: AnyObject) {
+        
         events.removeAtIndex(index)
-        data.removeObjectForKey("event " + String(index))
+        nsdata.removeObjectForKey("event " + String(index))
         --count
-        data.setValue(count, forKey: "count")
-        data.synchronize()
+        nsdata.setValue(count, forKey: "count")
+        nsdata.synchronize()
+    
+    
     }
     
+ }
 
 
 
 
-}
+

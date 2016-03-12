@@ -48,8 +48,7 @@ class ViewDay: UIViewController {
                 var index = date.endIndex.advancedBy(-6);
                 var substring = date.substringToIndex(index);
                 var split = substring.componentsSeparatedByString(": ");
-                print(split[1]);
-                print(date);
+            
                 if (edate == split[1]){
                     block.text = block.text + events[i] + "\n";
                     print(block.text);
